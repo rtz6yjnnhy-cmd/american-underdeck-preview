@@ -1,13 +1,13 @@
 // Serves the static export (out/) under the same basePath GitHub Pages uses,
 // so subdirectory paths can be checked locally. No dependencies.
-//   NEXT_PUBLIC_BASE_PATH=/american-underdeck-demo npm run build
-//   npm run preview   → http://localhost:3002/american-underdeck-demo/
+//   NEXT_PUBLIC_BASE_PATH=/american-underdeck-preview npm run build
+//   npm run preview   → http://localhost:3002/american-underdeck-preview/
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import http from "node:http";
 import path from "node:path";
 
-const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "/american-underdeck-demo";
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "/american-underdeck-preview";
 const port = Number(process.env.PORT ?? 3002);
 const root = path.resolve("out");
 const types = {

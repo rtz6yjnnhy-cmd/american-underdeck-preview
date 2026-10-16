@@ -107,15 +107,12 @@ export function Hero() {
         </h1>
 
         <div className="mt-8 grid gap-8 md:mt-12 md:grid-cols-12 md:items-end">
-          <motion.p
-            // Painted on the first frame (it is the mobile LCP); only a short rise.
-            initial={{ y: 12 }}
-            animate={{ y: 0 }}
-            transition={{ duration: duration.slow, ease: ease.out, delay: 0.8 }}
-            className="max-w-[30ch] text-lg text-fg/85 md:col-span-5"
-          >
+          {/* Same entrance as the approved version (fade + 12px rise, 0.6s, 0.8s
+              delay) from 768px up; on phones it only rises, so it paints on the
+              first frame — it is the mobile LCP element. See .hero-sub in globals.css. */}
+          <p className="hero-sub max-w-[30ch] text-lg text-fg/85 md:col-span-5">
             Transform unused space into extraordinary outdoor living.
-          </motion.p>
+          </p>
 
           <motion.div
             initial={{ opacity: 0, y: reduce ? 0 : 12 }}

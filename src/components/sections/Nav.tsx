@@ -63,13 +63,13 @@ export function Nav() {
             <Logo />
           </Link>
 
-          <nav aria-label="Primary" className="hidden lg:block">
+          <nav aria-label="Primary" className="hidden xl:block">
             <ul className="flex items-center gap-8">
               {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="relative py-2 text-sm opacity-80 transition-opacity duration-200 hover:opacity-100"
+                    className="relative whitespace-nowrap py-2 text-sm opacity-80 transition-opacity duration-200 hover:opacity-100"
                   >
                     {item.label}
                   </Link>
@@ -81,13 +81,13 @@ export function Nav() {
           <div className="flex items-center gap-4">
             <a
               href={company.phoneHref}
-              className="tabular hidden text-sm opacity-80 transition-opacity hover:opacity-100 md:inline"
+              className="tabular hidden min-h-[44px] items-center whitespace-nowrap text-sm opacity-80 transition-opacity hover:opacity-100 md:inline-flex"
             >
               {company.phone}
             </a>
             <Link
               href="#estimate"
-              className={`type-wide hidden min-h-[44px] items-center rounded-lg px-4 text-xs font-medium uppercase tracking-[0.08em] transition-colors duration-200 sm:inline-flex ${
+              className={`type-wide hidden min-h-[44px] items-center whitespace-nowrap rounded-lg px-4 text-xs font-medium uppercase tracking-[0.08em] transition-colors duration-200 sm:inline-flex ${
                 solid && !open
                   ? "bg-brand text-brand-fg hover:bg-brand/90"
                   : "border border-white/40 hover:bg-white/10"
@@ -102,7 +102,7 @@ export function Nav() {
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen((v) => !v)}
-              className="relative -mr-2 grid h-11 w-11 place-items-center rounded-lg lg:hidden"
+              className="relative -mr-2 grid h-11 w-11 place-items-center rounded-lg xl:hidden"
             >
               <span
                 className={`absolute h-px w-6 bg-current transition-transform duration-300 ease-out ${
@@ -131,7 +131,7 @@ export function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: duration.fast } }}
             transition={{ duration: duration.base, ease: ease.out }}
-            className="theme-abyss fixed inset-0 z-40 flex flex-col px-6 pb-12 pt-24 lg:hidden"
+            className="theme-abyss fixed inset-0 z-40 flex flex-col px-6 pb-12 pt-24 xl:hidden"
           >
             <ul className="flex flex-col gap-2">
               {[...nav, { href: "#estimate", label: "Free estimate" }].map((item, i) => (

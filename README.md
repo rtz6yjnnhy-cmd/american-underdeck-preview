@@ -14,16 +14,16 @@ npm run dev                 # http://localhost:3000 (generates image variants fi
 Preview the production export exactly as GitHub Pages serves it (under the repository path):
 
 ```bash
-NEXT_PUBLIC_BASE_PATH=/american-underdeck-demo npm run build
-NEXT_PUBLIC_BASE_PATH=/american-underdeck-demo npm run check:export
-npm run preview             # http://localhost:3002/american-underdeck-demo/
+NEXT_PUBLIC_BASE_PATH=/american-underdeck-preview npm run build
+NEXT_PUBLIC_BASE_PATH=/american-underdeck-preview npm run check:export
+npm run preview             # http://localhost:3002/american-underdeck-preview/
 ```
 
 On Windows Git Bash, prefix those commands with `MSYS_NO_PATHCONV=1` so the path isn't rewritten.
 
 ## Publish on GitHub Pages
 
-1. Create the repository (suggested: `american-underdeck-demo`) and push this project to `main`.
+1. Create the repository (suggested: `american-underdeck-preview`) and push this project to `main`.
 2. Repository **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. Every push to `main` runs `.github/workflows/deploy-pages.yml`: type check, lint, build, path validation, deploy.
    The repository name becomes the `basePath`, so the site is served at `https://<owner>.github.io/<repository>/`.

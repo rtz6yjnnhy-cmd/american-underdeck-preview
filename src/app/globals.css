@@ -93,6 +93,13 @@ body {
     letter-spacing: -0.02em;
     line-height: 0.95;
   }
+  /* Very small phones (<360px): long campaign words ("TRANSFORM.") would
+     exceed the column at the normal minimum size. 375px and up unchanged. */
+  @media (max-width: 359px) {
+    .type-campaign {
+      font-size: 2rem !important;
+    }
+  }
   .type-campaign-strong {
     font-variation-settings: "wdth" 125;
     font-weight: 500;
@@ -112,6 +119,32 @@ body {
       rgb(var(--line) / 0.08) 0 1px,
       transparent 1px 16px
     );
+  }
+}
+
+/* Hero subtitle entrance (values mirror duration.slow / ease.out). */
+@keyframes hero-sub-rise {
+  from {
+    transform: translateY(12px);
+  }
+}
+@keyframes hero-sub-fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.hero-sub {
+  animation: hero-sub-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
+}
+@media (min-width: 768px) {
+  .hero-sub {
+    animation-name: hero-sub-fade-rise;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-sub {
+    animation: none;
   }
 }
 

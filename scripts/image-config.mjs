@@ -6,4 +6,4 @@ export const IMAGE_SIZES = [96, 256, 384];
 export const ALL_WIDTHS = [...IMAGE_SIZES, ...DEVICE_SIZES];
 export const SOURCE_DIR = "public/images";
 export const OUTPUT_DIR = "public/_img";
-export const QUALITY = 78;
+export const QUALITY = 85;

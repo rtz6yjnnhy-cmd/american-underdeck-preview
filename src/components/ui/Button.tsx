@@ -4,7 +4,7 @@ import type { ComponentProps, ReactNode } from "react";
 type Variant = "primary" | "ghost" | "quiet";
 
 const base =
-  "group relative inline-flex min-h-[48px] items-center justify-center gap-4 rounded-lg px-6 text-sm font-medium transition-[transform,background-color,color,border-color] duration-200 ease-out active:scale-[0.98] select-none";
+  "group relative inline-flex min-h-[48px] items-center justify-center gap-4 whitespace-nowrap rounded-lg px-6 text-sm font-medium transition-[transform,background-color,color,border-color] duration-200 ease-out active:scale-[0.98] select-none";
 
 const variants: Record<Variant, string> = {
   primary: "bg-brand text-brand-fg hover:bg-brand/90",

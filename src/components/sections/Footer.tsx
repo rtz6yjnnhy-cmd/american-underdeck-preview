@@ -27,7 +27,10 @@ export function Footer() {
         </nav>
 
         <div className="text-sm md:col-span-4">
-          <a href={company.phoneHref} className="type-wide tabular text-lg hover:text-accent">
+          <a
+            href={company.phoneHref}
+            className="type-wide tabular inline-flex min-h-[44px] items-center text-lg hover:text-accent"
+          >
             {company.phone}
           </a>
           <ul className="mt-6 flex gap-6">
